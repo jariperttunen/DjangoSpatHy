@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+{% block page2 %}
+<html> <head>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'SpathyDemo/style.css' %}?{% now "U" %}"/>
+<title>{{maintitle}}</title>
+
+</head>
+
+<body>
+<h1>{{maintitle}}</h1>
+<h2>{{results}}</h2>
+<form action = "/SpathyDemo/index" method="post">
+{% csrf_token %}
+<input type="submit" value="Home" name="HomePage" id="results_spathy"/>
+</form>
+<table>
+  <tr>
+  {% for f in fig_ls %}
+  <td id="table1"> Fig {{forloop.counter}} <img src="{% static f %}" /> </td>
+  {% if forloop.counter|divisibleby:2 %}
+  </tr>
+  {% endif %}
+  {% endfor %}
+  </tr>
+</table>
+<hr>
+<address>Luke</address>
+<!-- hhmts start -->Last modified: Wed May 16 13:04:13 EEST 2018 <!-- hhmts end -->
+</body>
+</html>
+{% endblock page2 %}

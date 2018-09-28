@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+{% block page1 %}
+<html> <head>
+{% load staticfiles %}
+<title>{{maintitle}}</title>
+
+</head>
+
+<body>
+<h1>{{maintitle}}</h1>
+<form action = "/SpathyDemo/run" method="post">
+{% csrf_token %}
+<input type="submit" value="Run Spathy" name="RunSpathy" id="run_spathy"/>
+</form>
+<hr>
+<address>Luke</address>
+<!-- hhmts start -->Last modified: Mon May 14 13:23:05 EEST 2018 <!-- hhmts end -->
+</body>
+</html>
+{% endblock page1 %}
