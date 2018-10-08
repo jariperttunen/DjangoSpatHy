@@ -1,22 +1,33 @@
-You are now in SpatialHydrology directory. This is home directory to run SpatHy
-with Django www-server.
+You are now in DjangoSpaFHy directory. This is home directory to 
+run SpaFHy with Django www-server.
 
-SpatHy model with sample data can be found in Spathy directory.
-Vihti arcGIS data is in slauniainen directory.
+DjangoSpaFHy assumes that the required modules (from git repository)
+are cloned (git clone) side by side as follows:
 
-To fetch FMI data from 'weather' database at Luke
-see ildata.py in weather/ildata directory.
-Run 'python ildata.py --help' for usage.
+    DjangoSpaFHy
+    SpaFHy
+    SpaFHyData
+    SpaFHyWeather
 
-To fetch weather forecast from Norway database
-see weather/yrforcast/yrforecast.py and the first
-function forecast_yr (experimantal only). To write
-dataframe returned to excel see the last function
-write_excel. Run 'python yrforecast.py -h' for usage.
+SpaFHy is the SpatialHydrology model itself.
+SpaFHyData shall contain catchment data for
+the areas to be simulated. (Data is not
+necessary in git, contact Samuli Launiainen
+for details).
+SpaFHyWeather contain python scripts to fetch
+weather data from Luke 'weather' database 
+and from Norway (forecasts, at the moment experimental)
+See the README files in these modules for deatils.
 
-All python files require now python3.4 or higher.  It is recommended to create
-python virtual environment (name it e.g. 'spathy'), activate it and install the following
-packages with pip (pip install <package.name>):
+Python files in DjangoSpaFHy, SpaFHyWeather and in SpaFHy
+require now python3.4 or higher and python packages
+they depend on. It is recommended (read: mandatory)
+to create python virtual environment  common to 
+these three modules (name it e.g. 'spathy') 
+and activate it. To create a virtual environment 
+in python see 'https://docs.python.org/3/library/venv.html'
+Then  install the following packages with 
+pip (pip install <package name>):
 
 1. scipy
 2. matplotlib
